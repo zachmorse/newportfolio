@@ -1,0 +1,113 @@
+html {
+  background-color: black;
+}
+
+body {
+  font-family: 'Barlow';
+  color: white;
+}
+
+.fontWeight9 {
+  font-weight: 900;
+  /* font-size: 1.2rem; */
+}
+
+.fontWeight8 {
+  font-weight: 800;
+  /* font-size: 1.17rem; */
+}
+
+.fontWeight7 {
+  font-weight: 700;
+  /* font-size: 1.14rem; */
+}
+
+.fontWeight6 {
+  font-weight: 600;
+  /* font-size: 1.11rem; */
+}
+
+.fontWeight5 {
+  font-weight: 500;
+  /* font-size: 1.08rem; */
+}
+
+.fontWeight4 {
+  font-weight: 400;
+  /* font-size: 1.05rem; */
+}
+
+.fontWeight3 {
+  font-weight: 300;
+  /* font-size: 1.03rem; */
+}
+
+.fontWeight2 {
+  font-weight: 200;
+  /* font-size: 1rem; */
+}
+
+.fontWeight1 {
+  font-weight: 100;
+  /* font-size: 0.97 rem; */
+}
+
+@keyframes titleFadeIn {
+  0% {
+    opacity: 0;
+    color: black;
+  }
+  100% {
+    opacity: 1;
+    color: white;
+  }
+}
+
+.fadeIn1 {
+  animation: titleFadeIn 0.2s;
+}
+.fadeIn2 {
+  animation: titleFadeIn 0.3s;
+}
+.fadeIn3 {
+  animation: titleFadeIn 0.4s;
+}
+.fadeIn4 {
+  animation: titleFadeIn 0.5s;
+}
+.fadeIn5 {
+  animation: titleFadeIn 0.6s;
+}
+.fadeIn6 {
+  animation: titleFadeIn 0.7s;
+}
+.fadeIn7 {
+  animation: titleFadeIn 0.8s;
+}
+.fadeIn8 {
+  animation: titleFadeIn 0.9s;
+}
+.fadeIn9 {
+  animation: titleFadeIn 1s;
+}
+
+/* MOBILE AND INITIAL SETTINGS */
+
+.titleBlock {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* margin-left: 2rem; */
+  text-align: center;
+}
+
+.titleStack {
+  margin: 1.2rem 0rem;
+  /* opacity: 0; */
+}
+
+.contentBlock {
+  height: 100vh;
+  border: 1px solid red;
+}
