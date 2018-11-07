@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "OCRB";
+  src: url("../fonts/OCRB_Regular.ttf");
+}
+
+html {
+  background-color: black;
+  color: white;
+}
+
+body {
+  color: white;
+  /* max-width: 1280px; */
+  /* margin: auto; */
+  font-family: monospace;
+}
+
+.startContainer {
+  height: 100vh;
+  width: 100vh;
+  /* width: 60%; */
+  margin: auto;
+  background: url("../images/ZachProfile.jpg");
+  background-origin: padding-box;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.startCopy {
+  font-size: 40px;
+  /* color: black; */
+  color: aqua;
+  text-shadow: 3px 3px 3px white;
+  /* box-sizing: content-box; */
+  padding-left: 1rem;
+  /* font-family: "OCRB"; */
+}
