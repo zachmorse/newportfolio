@@ -1,24 +1,22 @@
 @font-face {
   font-family: "OCRB";
-  src: url("../fonts/OCRB_Regular.ttf");
+  src: url("../fonts/OCRB.otf");
 }
 
 html {
   background-color: black;
   color: white;
+  /* cursor: pointer; */
 }
 
 body {
   color: white;
-  /* max-width: 1280px; */
-  /* margin: auto; */
-  font-family: monospace;
+  font-family: "OCRB";
 }
 
 .startContainer {
   height: 100vh;
   width: 100vh;
-  /* width: 60%; */
   margin: auto;
   background: url("../images/ZachProfile.jpg");
   background-origin: padding-box;
@@ -31,10 +29,10 @@ body {
 
 .startCopy {
   font-size: 40px;
-  /* color: black; */
-  color: aqua;
-  text-shadow: 3px 3px 3px white;
-  /* box-sizing: content-box; */
+  color: rgb(54, 5, 83);
   padding-left: 1rem;
-  /* font-family: "OCRB"; */
+  background-color: white;
+  background-clip: padding-box;
+  max-width: 40%;
+  border: 2px dotted red;
 }
