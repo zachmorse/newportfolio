@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import randomWords from "random-words";
+// import randomWords from "random-words";
 
 import TonePlayer from "./TonePlayer";
 
@@ -75,7 +75,7 @@ export default class MainFrame extends Component {
             onClick={this.toggleActive1}
           >
             <h1>zach morse, a developer in nashville tn</h1>
-            <p>{randomWords({ exactly: 1000, join: " " })}</p>
+            {/* <p>{randomWords({ exactly: 1000, join: " " })}</p> */}
           </CollapseBlock>
           <CollapseBlock
             expanded={this.state.collapse2Expanded}
@@ -83,7 +83,7 @@ export default class MainFrame extends Component {
             onClick={this.toggleActive2}
           >
             <h1>i enjoy clean code and creative interface</h1>
-            <p>{randomWords({ exactly: 1000, join: " " })}</p>
+            {/* <p>{randomWords({ exactly: 1000, join: " " })}</p> */}
           </CollapseBlock>
           <CollapseBlock
             expanded={this.state.collapse3Expanded}
@@ -91,8 +91,8 @@ export default class MainFrame extends Component {
             onClick={this.toggleActive3}
           >
             {/* <TonePlayer /> */}
-            <h1>{randomWords({ exactly: 5, join: " " })}</h1>
-            <p>{randomWords({ exactly: 1000, join: " " })}</p>
+            {/* <h1>{randomWords({ exactly: 5, join: " " })}</h1>
+            <p>{randomWords({ exactly: 1000, join: " " })}</p> */}
           </CollapseBlock>
           <CollapseBlock
             expanded={this.state.collapse4Expanded}
@@ -100,7 +100,7 @@ export default class MainFrame extends Component {
             onClick={this.toggleActive4}
           >
             <h1>?????</h1>
-            <p>{randomWords({ exactly: 1000, join: " " })}</p>
+            {/* <p>{randomWords({ exactly: 1000, join: " " })}</p> */}
           </CollapseBlock>
         </CollapseContainer>
       </div>
