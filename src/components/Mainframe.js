@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-// import randomWords from "random-words";
+import randomWords from "random-words";
 
 import TonePlayer from "./TonePlayer";
 
@@ -74,7 +74,7 @@ export default class MainFrame extends Component {
             bgColor={"#4bdbfe"}
             onClick={this.toggleActive1}
           >
-            <h1>zach morse, a developer in nashville tn</h1>
+            {/* <h1>zach morse, a developer in nashville tn</h1> */}
             {/* <p>{randomWords({ exactly: 1000, join: " " })}</p> */}
           </CollapseBlock>
           <CollapseBlock
@@ -83,7 +83,9 @@ export default class MainFrame extends Component {
             onClick={this.toggleActive2}
           >
             <h1>i enjoy clean code and creative interface</h1>
-            {/* <p>{randomWords({ exactly: 1000, join: " " })}</p> */}
+            <p style={{ filter: "opacity(0.25)" }}>
+              {randomWords({ exactly: 1000, join: " " })}
+            </p>
           </CollapseBlock>
           <CollapseBlock
             expanded={this.state.collapse3Expanded}
