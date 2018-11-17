@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import randomWords from "random-words";
+// import randomWords from "random-words";
+import { string1, string2, string3, string4 } from "../dummyData/dummyData";
 
-import TonePlayer from "./TonePlayer";
+// import TonePlayer from "./TonePlayer";
 
 const CollapseContainer = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ const CollapseContainer = styled.div`
 
 const CollapseBlock = styled.div`
   background-color: ${props => props.bgColor};
-  width: ${props => (props.expanded ? "calc(100% - 120px)" : "40px")};
+  width: ${props => (props.expanded ? "calc(100% - 90px)" : "30px")};
 
   height: 100vh;
   transition: width 250ms ease-in-out;
@@ -75,6 +76,9 @@ export default class MainFrame extends Component {
           collapse4Expanded: true
         });
         break;
+
+      default:
+        console.log("case not found");
     }
   };
 
@@ -135,13 +139,21 @@ export default class MainFrame extends Component {
           >
             <div
               id="collapse1Expanded"
-              style={{ height: "100%" }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                textAlign: "center",
+                writingMode: "vertical-rl",
+                textOrientation: "upright",
+                height: "100%"
+              }}
               onClick={this.toggleExpand}
             >
               WHO
             </div>
             <div style={{ padding: 10 }}>
-              <p>{randomWords({ exactly: 1000, join: " " })}</p>
+              <p>{string1}</p>
             </div>
           </CollapseBlock>
           <CollapseBlock
@@ -150,13 +162,21 @@ export default class MainFrame extends Component {
           >
             <div
               id="collapse2Expanded"
-              style={{ height: "100%" }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                textAlign: "center",
+                writingMode: "vertical-rl",
+                textOrientation: "upright",
+                height: "100%"
+              }}
               onClick={this.toggleExpand}
             >
               WHAT
             </div>
             <div style={{ padding: 10 }}>
-              <p>{randomWords({ exactly: 1000, join: " " })}</p>
+              <p>{string2}</p>
             </div>
           </CollapseBlock>
           <CollapseBlock
@@ -165,13 +185,21 @@ export default class MainFrame extends Component {
           >
             <div
               id="collapse3Expanded"
-              style={{ height: "100%" }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                textAlign: "center",
+                writingMode: "vertical-rl",
+                textOrientation: "upright",
+                height: "100%"
+              }}
               onClick={this.toggleExpand}
             >
               WHY
             </div>
             <div style={{ padding: 10 }}>
-              <p>{randomWords({ exactly: 1000, join: " " })}</p>
+              <p>{string3}</p>
             </div>
           </CollapseBlock>
           <CollapseBlock
@@ -180,13 +208,21 @@ export default class MainFrame extends Component {
           >
             <div
               id="collapse4Expanded"
-              style={{ height: "100%" }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                textAlign: "center",
+                writingMode: "vertical-rl",
+                textOrientation: "upright",
+                height: "100%"
+              }}
               onClick={this.toggleExpand}
             >
               HUH?
             </div>
             <div style={{ padding: 10 }}>
-              <p>{randomWords({ exactly: 1000, join: " " })}</p>
+              <p>{string4}</p>
             </div>
           </CollapseBlock>
         </CollapseContainer>
