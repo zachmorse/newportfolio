@@ -15,10 +15,18 @@ const CollapseBlock = styled.div`
   height: 100vh;
   transition: width 250ms ease-in-out;
   overflow: scroll;
-  padding: 0rem 1rem;
+  // padding: 0rem 1rem;
+  display: grid;
+  grid-template-columns: 40px calc(100% - 40px);
+  grid-template-rows: 100%;
+  grid-gap: 10px;
 `;
 
 export default class MainFrame extends Component {
+  componentDidMount = () => {
+    window.addEventListener("keydown", this.handleKeypress);
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -29,41 +37,93 @@ export default class MainFrame extends Component {
     };
   }
 
-  toggleActive1 = e => {
-    this.setState({
-      collapse1Expanded: true,
-      collapse2Expanded: false,
-      collapse3Expanded: false,
-      collapse4Expanded: false
-    });
+  handleKeypress = e => {
+    // this.toggleExpand(e.key);
   };
 
-  toggleActive2 = () => {
-    this.setState({
-      collapse1Expanded: false,
-      collapse2Expanded: true,
-      collapse3Expanded: false,
-      collapse4Expanded: false
-    });
+  toggleExpand = e => {
+    switch (e.target.id) {
+      case "collapse1Expanded":
+        this.setState({
+          collapse1Expanded: true,
+          collapse2Expanded: false,
+          collapse3Expanded: false,
+          collapse4Expanded: false
+        });
+        break;
+      case "collapse2Expanded":
+        this.setState({
+          collapse1Expanded: false,
+          collapse2Expanded: true,
+          collapse3Expanded: false,
+          collapse4Expanded: false
+        });
+        break;
+      case "collapse3Expanded":
+        this.setState({
+          collapse1Expanded: false,
+          collapse2Expanded: false,
+          collapse3Expanded: true,
+          collapse4Expanded: false
+        });
+        break;
+      case "collapse4Expanded":
+        this.setState({
+          collapse1Expanded: false,
+          collapse2Expanded: false,
+          collapse3Expanded: false,
+          collapse4Expanded: true
+        });
+        break;
+    }
   };
 
-  toggleActive3 = () => {
-    this.setState({
-      collapse1Expanded: false,
-      collapse2Expanded: false,
-      collapse3Expanded: true,
-      collapse4Expanded: false
-    });
-  };
+  // toggleExpand = e => {
+  //   let stateObject = this.state;
+  //   let updatedState = {};
+  //   let key = e.target.id;
 
-  toggleActive4 = () => {
-    this.setState({
-      collapse1Expanded: false,
-      collapse2Expanded: false,
-      collapse3Expanded: false,
-      collapse4Expanded: true
-    });
-  };
+  //   let existingState = Object.keys(this.state);
+  //   let existingObjects = Object.values(this.state);
+  //   console.log(existingState, existingObjects);
+
+  //   for (let i = 0; i < existingState.length; i++) {
+  //     // console.log(
+  //     //   `Evaluating Key: ${key} against state property: ${existingState[i]}`
+  //     // );
+
+  //     // key === existingState[i]
+  //     //   ? (stateObject = { ...stateObject, [key]: true })
+  //     //   : (stateObject = { ...stateObject, [key]: false });
+
+  //     switch (key === existingState[i]) {
+  //       case true:
+  //         console.log(
+  //           `${key} DOES match the state property ${existingState[i]}!`
+  //         );
+  //         updatedState[key] = true;
+
+  //         break;
+  //       case false:
+  //         console.log(
+  //           `${key} does not match the state property ${existingState[i]}`
+  //         );
+  //         updatedState[key] = false;
+
+  //         break;
+
+  //       default:
+  //         console.log("No Matches Found");
+  //     }
+
+  //     // key === existingState[i]
+  //     //   ?  (stateObject = { ...stateObject, ...existingState })
+  //     //   : this.setState({ key: false });
+  //   }
+
+  //   console.log("STATE OBJECT RETURNING FROM SWITCH STATEMENT:", updatedState);
+  //   this.setState(stateObject);
+  // };
 
   render() {
     return (
@@ -72,37 +132,62 @@ export default class MainFrame extends Component {
           <CollapseBlock
             expanded={this.state.collapse1Expanded}
             bgColor={"#4bdbfe"}
-            onClick={this.toggleActive1}
           >
-            {/* <h1>zach morse, a developer in nashville tn</h1> */}
-            {/* <p>{randomWords({ exactly: 1000, join: " " })}</p> */}
+            <div
+              id="collapse1Expanded"
+              style={{ height: "100%" }}
+              onClick={this.toggleExpand}
+            >
+              WHO
+            </div>
+            <div style={{ padding: 10 }}>
+              <p>{randomWords({ exactly: 1000, join: " " })}</p>
+            </div>
           </CollapseBlock>
           <CollapseBlock
             expanded={this.state.collapse2Expanded}
             bgColor={"#5f84dd"}
-            onClick={this.toggleActive2}
           >
-            <h1>i enjoy clean code and creative interface</h1>
-            <p style={{ filter: "opacity(0.25)" }}>
-              {randomWords({ exactly: 1000, join: " " })}
-            </p>
+            <div
+              id="collapse2Expanded"
+              style={{ height: "100%" }}
+              onClick={this.toggleExpand}
+            >
+              WHAT
+            </div>
+            <div style={{ padding: 10 }}>
+              <p>{randomWords({ exactly: 1000, join: " " })}</p>
+            </div>
           </CollapseBlock>
           <CollapseBlock
             expanded={this.state.collapse3Expanded}
             bgColor={"#ff9b9e"}
-            onClick={this.toggleActive3}
           >
-            {/* <TonePlayer /> */}
-            {/* <h1>{randomWords({ exactly: 5, join: " " })}</h1>
-            <p>{randomWords({ exactly: 1000, join: " " })}</p> */}
+            <div
+              id="collapse3Expanded"
+              style={{ height: "100%" }}
+              onClick={this.toggleExpand}
+            >
+              WHY
+            </div>
+            <div style={{ padding: 10 }}>
+              <p>{randomWords({ exactly: 1000, join: " " })}</p>
+            </div>
           </CollapseBlock>
           <CollapseBlock
             expanded={this.state.collapse4Expanded}
             bgColor={"#46546e"}
-            onClick={this.toggleActive4}
           >
-            <h1>?????</h1>
-            {/* <p>{randomWords({ exactly: 1000, join: " " })}</p> */}
+            <div
+              id="collapse4Expanded"
+              style={{ height: "100%" }}
+              onClick={this.toggleExpand}
+            >
+              HUH?
+            </div>
+            <div style={{ padding: 10 }}>
+              <p>{randomWords({ exactly: 1000, join: " " })}</p>
+            </div>
           </CollapseBlock>
         </CollapseContainer>
       </div>
