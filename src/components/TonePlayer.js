@@ -85,7 +85,7 @@ export default class TonePlayer extends Component {
       display: grid;
       grid-template-columns: 50px 50px 50px 50px 50px 50px;
       grid-template-rows: 50px 50px 50px 50px 50px 50px;
-      grid-gap: 10px;
+      grid-gap: 5px;
       width: 55%;
       margin: auto;
       padding-top: 2rem;
