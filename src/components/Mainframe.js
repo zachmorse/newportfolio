@@ -3,7 +3,7 @@ import styled from "styled-components";
 // import randomWords from "random-words";
 import { string1, string2, string3, string4 } from "../dummyData/dummyData";
 
-import TonePlayer from "./TonePlayer";
+// import TonePlayer from "./TonePlayer";
 
 const CollapseContainer = styled.div`
   display: flex;
@@ -32,10 +32,13 @@ const CollapseBlockHeader = styled.div`
   writing-mode: vertical-rl;
   text-orientation: upright;
   height: 100%;
+  position: sticky;
+  top: 0;
 `;
 
 const CollapseBlockContent = styled.div`
   padding: 0px 10px 0px 10px;
+  filter: opacity(0.5);
 `;
 
 export default class MainFrame extends Component {
@@ -64,86 +67,74 @@ export default class MainFrame extends Component {
       collapse3Expanded: false,
       collapse4Expanded: false
     };
-
-    // for (key in stateObject) {
-    //   console.log(key);
-    // }
-
-    // switch (e.target.id) {
-    //   case "collapse1Expanded":
-    //     this.setState({
-    //       collapse1Expanded: true,
-    //       collapse2Expanded: false,
-    //       collapse3Expanded: false,
-    //       collapse4Expanded: false
-    //     });
-    //     break;
-    //   case "collapse2Expanded":
-    //     this.setState({
-    //       collapse1Expanded: false,
-    //       collapse2Expanded: true,
-    //       collapse3Expanded: false,
-    //       collapse4Expanded: false
-    //     });
-    //     break;
-    //   case "collapse3Expanded":
-    //     this.setState({
-    //       collapse1Expanded: false,
-    //       collapse2Expanded: false,
-    //       collapse3Expanded: true,
-    //       collapse4Expanded: false
-    //     });
-    //     break;
-    //   case "collapse4Expanded":
-    //     this.setState({
-    //       collapse1Expanded: false,
-    //       collapse2Expanded: false,
-    //       collapse3Expanded: false,
-    //       collapse4Expanded: true
-    //     });
-    //     break;
-
-    //   default:
-    //     console.log("case not found");
-    // }
+    stateObject[e.target.id] = true;
+    this.setState(stateObject);
   };
 
   render() {
     return (
       <div>
         <CollapseContainer>
-          <CollapseBlock expanded={this.state.collapse1Expanded} bgColor={"#4bdbfe"}>
-            <CollapseBlockHeader id="collapse1Expanded" onClick={this.toggleExpand}>
+          <CollapseBlock
+            expanded={this.state.collapse1Expanded}
+            bgColor={"#4bdbfe"}
+          >
+            <CollapseBlockHeader
+              id="collapse1Expanded"
+              onClick={this.toggleExpand}
+            >
               WHO
             </CollapseBlockHeader>
             <CollapseBlockContent>
               <p>{string1}</p>
+              <p>{string1}</p>
             </CollapseBlockContent>
           </CollapseBlock>
 
-          <CollapseBlock expanded={this.state.collapse2Expanded} bgColor={"#5f84dd"}>
-            <CollapseBlockHeader id="collapse2Expanded" onClick={this.toggleExpand}>
+          <CollapseBlock
+            expanded={this.state.collapse2Expanded}
+            bgColor={"#5f84dd"}
+          >
+            <CollapseBlockHeader
+              id="collapse2Expanded"
+              onClick={this.toggleExpand}
+            >
               WHAT
             </CollapseBlockHeader>
             <CollapseBlockContent>
               <p>{string2}</p>
+              <p>{string2}</p>
             </CollapseBlockContent>
           </CollapseBlock>
 
-          <CollapseBlock expanded={this.state.collapse3Expanded} bgColor={"#ff9b9e"}>
-            <CollapseBlockHeader id="collapse3Expanded" onClick={this.toggleExpand}>
+          <CollapseBlock
+            expanded={this.state.collapse3Expanded}
+            bgColor={"#ff9b9e"}
+          >
+            <CollapseBlockHeader
+              id="collapse3Expanded"
+              onClick={this.toggleExpand}
+            >
               WHERE
             </CollapseBlockHeader>
             <CollapseBlockContent>
               <p>{string3}</p>
+              <p>{string3}</p>
             </CollapseBlockContent>
           </CollapseBlock>
 
-          <CollapseBlock expanded={this.state.collapse4Expanded} bgColor={"#46546e"}>
-            <CollapseBlockHeader id="collapse4Expanded" onClick={this.toggleExpand}>
+          <CollapseBlock
+            expanded={this.state.collapse4Expanded}
+            bgColor={"#46546e"}
+          >
+            <CollapseBlockHeader
+              id="collapse4Expanded"
+              onClick={this.toggleExpand}
+            >
               ????
             </CollapseBlockHeader>
             <CollapseBlockContent>
+              <p>{string4}</p>
               <p>{string4}</p>
             </CollapseBlockContent>
           </CollapseBlock>
