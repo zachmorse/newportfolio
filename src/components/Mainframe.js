@@ -1,51 +1,52 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 // import randomWords from "random-words";
-import { string1, string2, string3, string4 } from "../dummyData/dummyData";
+import { string1, string2, string3 } from "../dummyData/dummyData";
+import {
+  CollapseContainer,
+  CollapseBlock,
+  CollapseBlockContent,
+  CollapseBlockHeader
+} from "../styledComponents/index";
 
-// import TonePlayer from "./TonePlayer";
+import TonePlayer from "./TonePlayer";
 
-const CollapseContainer = styled.div`
-  display: flex;
-`;
+// const CollapseContainer = styled.div`
+//   display: flex;
+// `;
 
-const CollapseBlock = styled.div`
-  background-color: ${props => props.bgColor};
-  width: ${props => (props.expanded ? "calc(100% - 120px)" : "40px")};
+// const CollapseBlock = styled.div`
+//   background-color: ${props => props.bgColor};
+//   width: ${props => (props.expanded ? "calc(100% - 75px)" : "25px")};
 
-  height: 100vh;
-  transition: width 400ms ease-in-out;
-  overflow: scroll;
-  // padding: 0rem 1rem;
-  display: grid;
-  grid-template-columns: 40px calc(100% - 40px);
-  grid-template-rows: 100%;
-  grid-gap: 10px;
-`;
+//   height: 100vh;
+//   transition: width 300ms ease-in-out;
+//   display: grid;
+//   grid-template-columns: 25px calc(100% - 25px);
+//   grid-template-rows: 100%;
+// `;
 
-const CollapseBlockHeader = styled.div`
-  color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  height: 100%;
-  position: sticky;
-  top: 0;
-`;
+// const CollapseBlockHeader = styled.div`
+//   color: black;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   text-align: center;
+//   writing-mode: vertical-rl;
+//   text-orientation: upright;
+//   height: 100vh;
+//   position: sticky;
+//   top: 0;
+// `;
 
-const CollapseBlockContent = styled.div`
-  padding: 0px 10px 0px 10px;
-  filter: opacity(0.5);
-`;
+// const CollapseBlockContent = styled.div`
+//   display: ${props => (props.contentVisible ? "inherit" : "none")};
+
+//   padding: 0px 10px 0px 0px;
+//   overflow: scroll;
+//   height: 100vh;
+// `;
 
 export default class MainFrame extends Component {
-  componentDidMount = () => {
-    window.addEventListener("keydown", this.handleKeypress);
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -56,9 +57,13 @@ export default class MainFrame extends Component {
     };
   }
 
-  handleKeypress = e => {
-    // this.toggleExpand(e.key);
-  };
+  // componentDidMount = () => {
+  //   window.addEventListener("keydown", this.handleKeypress);
+  // };
+
+  // handleKeypress = e => {
+  //   console.log(e.key);
+  // };
 
   toggleExpand = e => {
     let stateObject = {
@@ -85,8 +90,7 @@ export default class MainFrame extends Component {
             >
               WHO
             </CollapseBlockHeader>
-            <CollapseBlockContent>
-              <p>{string1}</p>
+            <CollapseBlockContent contentVisible={this.state.collapse1Expanded}>
               <p>{string1}</p>
             </CollapseBlockContent>
           </CollapseBlock>
@@ -101,8 +105,7 @@ export default class MainFrame extends Component {
             >
               WHAT
             </CollapseBlockHeader>
-            <CollapseBlockContent>
-              <p>{string2}</p>
+            <CollapseBlockContent contentVisible={this.state.collapse2Expanded}>
               <p>{string2}</p>
             </CollapseBlockContent>
           </CollapseBlock>
@@ -117,8 +120,7 @@ export default class MainFrame extends Component {
             >
               WHERE
             </CollapseBlockHeader>
-            <CollapseBlockContent>
-              <p>{string3}</p>
+            <CollapseBlockContent contentVisible={this.state.collapse3Expanded}>
               <p>{string3}</p>
             </CollapseBlockContent>
           </CollapseBlock>
@@ -133,9 +135,8 @@ export default class MainFrame extends Component {
             >
               ????
             </CollapseBlockHeader>
-            <CollapseBlockContent>
-              <p>{string4}</p>
-              <p>{string4}</p>
+            <CollapseBlockContent contentVisible={this.state.collapse4Expanded}>
+              <TonePlayer />
             </CollapseBlockContent>
           </CollapseBlock>
         </CollapseContainer>

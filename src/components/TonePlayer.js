@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import styled from "styled-components";
 // import Tone from "tone";
 import "../styles/App.css";
+import {
+  GridContainer,
+  GridItem,
+  MasterAlign
+} from "../styledComponents/index";
 
 // import bass from "../audio/bass.mp3";
 // import drums from "../audio/Drums.mp3";
@@ -81,36 +86,6 @@ export default class TonePlayer extends Component {
   }
 
   render() {
-    const GridContainer = styled.div`
-      display: grid;
-      grid-template-columns: 50px 50px 50px 50px 50px 50px;
-      grid-template-rows: 50px 50px 50px 50px 50px 50px;
-      grid-gap: 5px;
-      width: 55%;
-      margin: auto;
-      padding-top: 2rem;
-    `;
-
-    const GridItem = styled.div`
-      background-color: ${props => (props.active ? "#febc5b" : "transparent")};
-      color: ${props => (props.active ? "black" : "inherit")};
-      grid-column-start: ${props => props.column};
-      grid-row-start: ${props => props.row};
-
-      border: 1px solid #febc5b;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    `;
-
-    const MasterAlign = styled.div`
-      display: flex;
-      justify-content: center;
-      flex-direction: row;
-    `;
-
     return (
       <div>
         <MasterAlign>
